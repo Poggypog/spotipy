@@ -111,10 +111,7 @@ class SpotifyAuthBase(object):
 
     @staticmethod
     def _get_user_input(prompt):
-        try:
-            return raw_input(prompt)
-        except NameError:
-            return input(prompt)
+        return "https://github.com/AltZilla/Stella"
 
     @staticmethod
     def is_token_expired(token_info):
