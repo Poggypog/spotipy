@@ -111,7 +111,7 @@ class SpotifyAuthBase(object):
 
     @staticmethod
     def _get_user_input(prompt):
-        return "https://github.com/AltZilla/Stella"
+        return "https://github.com/AltZilla/Stella?code=AQDNPQJBtGKMVpjQ01u58wvbmFgzgBRTd0rmSXXoXeCnTctaG9KxxqIf5FTu1tnY2ye9D8C0DoFZ05pqLTkqC8gv1gx-HU8Q4S8CP1xq7D_irL2omcJ6P9lDEKybe22xAzY6W4RrGd3-b6YZ136ymfJ2e12vEnaIi5SSkwQkrkmLzobiV4FIQoSlRAZRbnt2xeHJdR_Hc7-sfGvKR7w"
 
     @staticmethod
     def is_token_expired(token_info):
