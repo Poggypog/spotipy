@@ -329,6 +329,7 @@ class SpotifyOAuth(SpotifyAuthBase):
 
         self.client_id = client_id
         self.client_secret = client_secret
+        self.user_input = user_input
         self.redirect_uri = redirect_uri
         self.state = state
         self.scope = self._normalize_scope(scope)
@@ -445,7 +446,7 @@ class SpotifyOAuth(SpotifyAuthBase):
                 "Go to the following URL: {}\n"
                 "Enter the URL you were redirected to: ".format(url)
             )
-        response = self._get_user_input(prompt)
+        response = self.user_input
         state, code = SpotifyOAuth.parse_auth_response_url(response)
         if self.state is not None and self.state != state:
             raise SpotifyStateError(self.state, state)
