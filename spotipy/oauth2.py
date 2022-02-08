@@ -111,7 +111,7 @@ class SpotifyAuthBase(object):
 
     @staticmethod
     def _get_user_input(prompt):
-        return user_input
+        return self.user_input
 
     @staticmethod
     def is_token_expired(token_info):
