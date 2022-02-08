@@ -72,7 +72,7 @@ def _ensure_value(value, env_key):
 
 
 class SpotifyAuthBase(object):
-    def __init__(self, requests_session):
+    def __init__(self, requests_session, user_input=None):
         if isinstance(requests_session, requests.Session):
             self._session = requests_session
         else:
@@ -111,7 +111,7 @@ class SpotifyAuthBase(object):
 
     @staticmethod
     def _get_user_input(prompt):
-        return "https://github.com/AltZilla/Stella?code=AQDNPQJBtGKMVpjQ01u58wvbmFgzgBRTd0rmSXXoXeCnTctaG9KxxqIf5FTu1tnY2ye9D8C0DoFZ05pqLTkqC8gv1gx-HU8Q4S8CP1xq7D_irL2omcJ6P9lDEKybe22xAzY6W4RrGd3-b6YZ136ymfJ2e12vEnaIi5SSkwQkrkmLzobiV4FIQoSlRAZRbnt2xeHJdR_Hc7-sfGvKR7w"
+        return user_input
 
     @staticmethod
     def is_token_expired(token_info):
@@ -295,7 +295,8 @@ class SpotifyOAuth(SpotifyAuthBase):
             requests_session=True,
             requests_timeout=None,
             open_browser=True,
-            cache_handler=None
+            cache_handler=None,
+            user_input=None
     ):
         """
         Creates a SpotifyOAuth object
@@ -324,7 +325,7 @@ class SpotifyOAuth(SpotifyAuthBase):
                               (takes precedence over `cache_path` and `username`)
         """
 
-        super(SpotifyOAuth, self).__init__(requests_session)
+        super(SpotifyOAuth, self).__init__(requests_session, user_input)
 
         self.client_id = client_id
         self.client_secret = client_secret
