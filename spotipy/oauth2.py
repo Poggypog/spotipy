@@ -110,7 +110,7 @@ class SpotifyAuthBase(object):
         self._redirect_uri = _ensure_value(val, "redirect_uri")
 
     @property
-    def _get_user_input(self, prompt):
+    def _get_user_input(self, prompt=None):
         return self.user_input
 
     @staticmethod
